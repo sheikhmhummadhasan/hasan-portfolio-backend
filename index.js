@@ -54,10 +54,10 @@ app.get('/visitor', async (req, res) => {
 
 // DELETE VISITOR DATA
 app.delete('/visitor/:id', async(req, res) => {
-    const {id} = req.params;
-    const data = await reviewColl.deleteOne({
+      const {id} = req.params;
+    const data = await userColl.deleteOne({
         _id: new ObjectId(id)
-    });
+    })
     res.send(data)
 })
 
