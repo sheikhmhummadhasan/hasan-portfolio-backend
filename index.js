@@ -52,6 +52,15 @@ app.get('/visitor', async (req, res) => {
     res.send(data)
 })
 
+// DELETE VISITOR DATA
+app.delete('/visitor/:id', async(req, res) => {
+    const {id} = req.params;
+    const data = await reviewColl.deleteOne({
+        _id: new ObjectId(id)
+    });
+    res.send(data)
+})
+
 // REVIEWR DATA POST
 app.post('/review', async(req, res) => {
     const data = req.body;
